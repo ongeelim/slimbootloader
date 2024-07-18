@@ -1346,7 +1346,7 @@ class Build(object):
             "-b",         self._target,
             "--arch",     self._arch,
             "--tagname",  self._toolchain,
-            "-n",         str(multiprocessing.cpu_count()),
+            "-n",         "1", #str(multiprocessing.cpu_count()),
             "-y",         "Report.log",
             "-Y",         "PCD",
             "-Y",         "FLASH",

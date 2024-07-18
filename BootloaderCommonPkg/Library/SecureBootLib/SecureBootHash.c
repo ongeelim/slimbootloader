@@ -50,9 +50,9 @@ GetHashToExtend (
   if (HashType == HASH_TYPE_SHA256) {
     DigestSize = SHA256_DIGEST_SIZE;
   } else if (HashType == HASH_TYPE_SHA384) {
-    DigestSize = SHA384_DIGEST_SIZE;
+    // DigestSize = SHA384_DIGEST_SIZE;
   }  else if (HashType == HASH_TYPE_SM3) {
-    DigestSize = SM3_DIGEST_SIZE;
+    // DigestSize = SM3_DIGEST_SIZE;
   } else {
     return RETURN_INVALID_PARAMETER;
   }
@@ -112,11 +112,11 @@ CalculateHash  (
     HashRetVal = Sha256 (Data, Length, Digest);
     DigestSize = SHA256_DIGEST_SIZE;
   } else if (HashAlg == HASH_TYPE_SHA384) {
-    HashRetVal = Sha384 (Data, Length, Digest);
-    DigestSize = SHA384_DIGEST_SIZE;
+    // HashRetVal = Sha384 (Data, Length, Digest);
+    // DigestSize = SHA384_DIGEST_SIZE;
   } else if (HashAlg == HASH_TYPE_SM3) {
-    HashRetVal = Sm3 (Data, Length, Digest);
-    DigestSize = SM3_DIGEST_SIZE;
+    // HashRetVal = Sm3 (Data, Length, Digest);
+    // DigestSize = SM3_DIGEST_SIZE;
   } else {
     return RETURN_UNSUPPORTED;
   }

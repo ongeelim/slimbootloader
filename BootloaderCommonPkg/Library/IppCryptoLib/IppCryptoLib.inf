@@ -14,7 +14,8 @@
   MODULE_TYPE                    = BASE
   VERSION_STRING                 = 1.0
   LIBRARY_CLASS                  = CryptoLib
-  DEFINE IPP_PATH                = auth
+  DEFINE IPP_PATH                = auth2
+  #DEFINE IPP_PATH                = auth
 
 #
 # The following information is for reference only and not required by the build tools.
@@ -23,74 +24,82 @@
 #
 
 [Sources]
-  $(IPP_PATH)/pcpmulbnukara.h
-  $(IPP_PATH)/pcpscramble.h
-  $(IPP_PATH)/pcphmac_rmf.h
-  $(IPP_PATH)/pcptool.h
-  $(IPP_PATH)/ippdefs.h
+  #$(IPP_PATH)/pcpmulbnukara.h
+  #$(IPP_PATH)/pcpscramble.h
+  #$(IPP_PATH)/pcphmac_rmf.h
+  #$(IPP_PATH)/pcptool.h
+  #$(IPP_PATH)/ippdefs.h
   $(IPP_PATH)/owncp.h
-  $(IPP_PATH)/pcphmac.h
-  $(IPP_PATH)/pcpngrsamontstuff.h
-  $(IPP_PATH)/ippcpdefs.h
+  #$(IPP_PATH)/pcphmac.h
+  #$(IPP_PATH)/pcpngrsamontstuff.h
+  #$(IPP_PATH)/ippcpdefs.h
   $(IPP_PATH)/pcphashmethod_rmf.h
-  $(IPP_PATH)/ipptypes.h
-  $(IPP_PATH)/pcpbnumisc.h
-  $(IPP_PATH)/pcpngrsa.h
+  #$(IPP_PATH)/ipptypes.h
+  #$(IPP_PATH)/pcpbnumisc.h
+  #$(IPP_PATH)/pcpngrsa.h
   $(IPP_PATH)/ippcp.h
-  $(IPP_PATH)/pcpvariant.h
+  $(IPP_PATH)/ippcpdefs.h
+  $(IPP_PATH)/ippversion.h
+  #$(IPP_PATH)/pcpvariant.h
   $(IPP_PATH)/pcphash_rmf.h
-  $(IPP_PATH)/pcpbnu32arith.h
-  $(IPP_PATH)/ippbase.h
-  $(IPP_PATH)/pcpmontgomery.h
-  $(IPP_PATH)/gsmodstuff.h
-  $(IPP_PATH)/pcpmontred.h
+  #$(IPP_PATH)/pcpbnu32arith.h
+  #$(IPP_PATH)/ippbase.h
+  #$(IPP_PATH)/pcpmontgomery.h
+  #$(IPP_PATH)/gsmodstuff.h
+  #$(IPP_PATH)/pcpmontred.h
   $(IPP_PATH)/pcphash.h
-  $(IPP_PATH)/pcpbn.h
-  $(IPP_PATH)/pcpvariant_abl.h
-  $(IPP_PATH)/pcpbnuimpl.h
-  $(IPP_PATH)/gsmodmethod.h
+  #$(IPP_PATH)/pcpbn.h
+  #$(IPP_PATH)/pcpvariant_abl.h
+  #$(IPP_PATH)/pcpbnuimpl.h
+  #$(IPP_PATH)/gsmodmethod.h
   $(IPP_PATH)/owndefs.h
-  $(IPP_PATH)/pcpbnuarith.h
-  $(IPP_PATH)/pcpbnu32misc.h
-  $(IPP_PATH)/pcprsa_pss_preproc.h
-  $(IPP_PATH)/gsmodmethod.c
-  $(IPP_PATH)/gsmodstuff.c
-  $(IPP_PATH)/pcpbnca.c
-  $(IPP_PATH)/pcpbnsetca.c
-  $(IPP_PATH)/pcpbnu32arith.c
-  $(IPP_PATH)/pcpbnu32misc.c
-  $(IPP_PATH)/pcpbnuarith.c
-  $(IPP_PATH)/pcpbnumisc.c
-  $(IPP_PATH)/pcphashca_rmf.c
-  $(IPP_PATH)/pcphashcnt.c
-  $(IPP_PATH)/pcpmontred.c
-  $(IPP_PATH)/pcpngrsaencodec.c
-  $(IPP_PATH)/pcpngrsakeypublic.c
-  $(IPP_PATH)/pcpngrsamontstuff.c
-  $(IPP_PATH)/pcpngrsassapkcsv15ca_rmf.c
-  $(IPP_PATH)/pcpngrsapss_rmf.c
-  $(IPP_PATH)/pcpmgf1ca_rmf.c
-  $(IPP_PATH)/pcpsha256ca.c
-  $(IPP_PATH)/pcpsha512ca.c
-  $(IPP_PATH)/pcpsm3ca.c
-  $(IPP_PATH)/pcphmacca_rmf.c
-  hmac.c
-  rsa_verify.c
+  #$(IPP_PATH)/pcpbnuarith.h
+  #$(IPP_PATH)/pcpbnu32misc.h
+  #$(IPP_PATH)/pcprsa_pss_preproc.h
+  #$(IPP_PATH)/gsmodmethod.c
+  #$(IPP_PATH)/gsmodstuff.c
+  #$(IPP_PATH)/pcpbnca.c
+  #$(IPP_PATH)/pcpbnsetca.c
+  #$(IPP_PATH)/pcpbnu32arith.c
+  #$(IPP_PATH)/pcpbnu32misc.c
+  #$(IPP_PATH)/pcpbnuarith.c
+  #$(IPP_PATH)/pcpbnumisc.c
+  #$(IPP_PATH)/pcphashca_rmf.c
+  #$(IPP_PATH)/pcphashcnt.c
+  #$(IPP_PATH)/pcpmontred.c
+  #$(IPP_PATH)/pcpngrsaencodec.c
+  #$(IPP_PATH)/pcpngrsakeypublic.c
+  #$(IPP_PATH)/pcpngrsamontstuff.c
+  #$(IPP_PATH)/pcpngrsassapkcsv15ca_rmf.c
+  #$(IPP_PATH)/pcpngrsapss_rmf.c
+  #$(IPP_PATH)/pcpmgf1ca_rmf.c
+  #$(IPP_PATH)/pcpsha256ca.c
+  #$(IPP_PATH)/pcpsha512ca.c
+  #$(IPP_PATH)/pcpsm3ca.c
+  #$(IPP_PATH)/pcphmacca_rmf.c
+  #hmac.c
+  #rsa_verify.c
   sha256.c
-  sha384.c
-  sm3.c
+  #sha384.c
+  #sm3.c
 
-[Sources.IA32]
-  $(IPP_PATH)/Ia32/pcpsha256v8as.nasm
-  $(IPP_PATH)/Ia32/pcpsha256nias.nasm
-  $(IPP_PATH)/Ia32/pcpsha512w7as.nasm
-  $(IPP_PATH)/Ia32/pcpsha512g9as.nasm
+[Binaries]
+  LIB|$(IPP_PATH)/ippcp.lib
+  LIB|$(IPP_PATH)/ippcpmt.lib
+  LIB|$(IPP_PATH)/crypto_mb.lib
+  LIB|$(IPP_PATH)/crypto_mbmt.lib
 
-[Sources.X64]
-  $(IPP_PATH)/X64/pcpsha256u8as.nasm
-  $(IPP_PATH)/X64/pcpsha256nias.nasm
-  $(IPP_PATH)/X64/pcpsha512m7as.nasm
-  $(IPP_PATH)/X64/pcpsha512e9as.nasm
+#[Sources.IA32]
+#  $(IPP_PATH)/Ia32/pcpsha256v8as.nasm
+#  $(IPP_PATH)/Ia32/pcpsha256nias.nasm
+#  $(IPP_PATH)/Ia32/pcpsha512w7as.nasm
+#  $(IPP_PATH)/Ia32/pcpsha512g9as.nasm
+#
+#[Sources.X64]
+#  $(IPP_PATH)/X64/pcpsha256u8as.nasm
+#  $(IPP_PATH)/X64/pcpsha256nias.nasm
+#  $(IPP_PATH)/X64/pcpsha512m7as.nasm
+#  $(IPP_PATH)/X64/pcpsha512e9as.nasm
 
 [Packages]
   MdePkg/MdePkg.dec
