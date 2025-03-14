@@ -378,6 +378,9 @@ GetBoardId (
     case BoardIdMtlPLp5xT3Rvp:
       *PlatformId = PLATFORM_ID_MTL_P_LPDDR5_T3_RVP;
       break;
+    case BoardIdMtlPUpXtremei14:
+      *PlatformId = PLATFORM_ID_MTL_P_UPXI14;
+      break;
     case BoardIdMtlPSDdr5Rvp:
       *PlatformId = PLATFORM_ID_MTL_PS_DDR5_RVP;
       break;

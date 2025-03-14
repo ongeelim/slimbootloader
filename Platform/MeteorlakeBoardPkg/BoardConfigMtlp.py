@@ -68,7 +68,7 @@ class Board(BaseBoard):
         self.ENABLE_SMM_REBASE    = 2
 
         # 0 - PCH UART0, 1 - PCH UART1, 2 - PCH UART2, 0xFF - EC UART 0x3F8
-        self.DEBUG_PORT_NUMBER = 0x0
+        self.DEBUG_PORT_NUMBER = 0x1
 
         self.ENABLE_MULTI_USB_BOOT_DEV = 1
 
@@ -203,7 +203,7 @@ class Board(BaseBoard):
         #   the ImageId field in the VBT container.
         # VbtFileName is the VBT file name. It needs to be located under platform
         #   VbtBin folder.
-        self._MULTI_VBT_FILE      = {1:'VbtMtlpCrb.dat', 2:'VbtMtlpLp5.dat', 3:'VbtMtlpRvp.dat', 4:'VbtMtlpsCrb.dat', 5:'VbtMtlpsRvp.dat', 6:'VbtMtlpMcl.dat'}
+        self._MULTI_VBT_FILE      = {1:'VbtMtlpCrb.dat', 2:'VbtMtlpLp5.dat', 3:'VbtMtlpRvp.dat', 4:'VbtMtlpsCrb.dat', 5:'VbtMtlpsRvp.dat', 6:'VbtMtlpMcl.dat', 7:'VbtMtlpUpx.dat'}
 
         self.CFG_DATABASE_SIZE    = self.CFGDATA_SIZE
         self._generated_cfg_file_prefix = 'Autogen_'
@@ -211,7 +211,8 @@ class Board(BaseBoard):
         self._CFGDATA_INT_FILE = []
         self._CFGDATA_EXT_FILE = [self._generated_cfg_file_prefix + 'CfgData_Int_Mtlp_DDR5_Rvp.dlt', self._generated_cfg_file_prefix + 'CfgData_Int_Mtlps_DDR5_RVP.dlt',
                                   self._generated_cfg_file_prefix + 'CfgData_Int_Mtlps_DDR5_CRB.dlt', self._generated_cfg_file_prefix + 'CfgData_Int_Mtlp_LPDDR5_Rvp.dlt',
-                                  self._generated_cfg_file_prefix + 'CfgData_Int_Mtlp_DDR5_CRB.dlt', self._generated_cfg_file_prefix + 'CfgData_Int_Mtlp_DDR5_MCL.dlt']
+                                  self._generated_cfg_file_prefix + 'CfgData_Int_Mtlp_DDR5_CRB.dlt', self._generated_cfg_file_prefix + 'CfgData_Int_Mtlp_DDR5_MCL.dlt',
+                                  self._generated_cfg_file_prefix + 'CfgData_Ext_Upx14.dlt']
 
     def PlatformBuildHook (self, build, phase):
         if phase == 'pre-build:before':
